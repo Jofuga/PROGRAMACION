@@ -63,11 +63,25 @@ public class jugador {
 	public void setId(int id) {
 		this.id = id;
 	}
+	//Comprueba que edad es un numero
+	public boolean isNumeric(String text) {
+		try {
+			Integer.parseInt(text);
+			return true;
+		} catch(NumberFormatException nfe){
+			return false;
+	}}
+	
+	public Boolean sonEspacios(String text)  
+	{
+	for(int i=0; i<text.length(); i++)
+		if(text.charAt(i) != ' ')
+			return false; 
+			return true;
+	}
 
 	//Cadena datos jugador//
 	public String toString (){
-	return this.nombre+" "+this.apellidos+" "+this.localidad+" "+this.edad+" "+this.puntos+" "+this.id+" ";
+	return this.nombre+" "+this.apellidos+" "+this.localidad+" "+this.edad+" ";
 	}
 }
-
-
