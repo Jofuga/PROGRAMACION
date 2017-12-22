@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import juego.jugador;
+import juego.Jugador;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
@@ -23,6 +23,7 @@ public class principal extends JFrame {
      //para que el objeto jugador fuese visible a toda la clase debería estar declarado aquí en los atributos de la clase, antes de los métodos
 	//Generamos un nuevo jugador
 	private Jugador player1;
+	private ventana2 v2;
 
 	/**
 	 * Launch the application.
@@ -59,7 +60,7 @@ public class principal extends JFrame {
 		
 		/*jugador player1=new jugador ();*/
 		//Como lo declaramos arriba en atributos mejor
-		player1=new jugador();
+		player1=new Jugador();
 		player1.setNombre("");
 		player1.setApellidos("");
 		player1.setLocalidad("");
@@ -193,6 +194,15 @@ public class principal extends JFrame {
 		btnsiguiente.setBounds(301, 197, 123, 36);
 		btnsiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				player1.setNombre(textField.getText());
+				//ventana2 = v2
+				v2=new ventana2();
+				
+				//importa jugador
+				v2.setJugador(player1);
+				
+				//muestra ventana2
+				v2.setVisible(true);
 				
 			//Muestra el texto error o datos introducidos
 			if (player1.getEdad()==999)
@@ -210,6 +220,6 @@ public class principal extends JFrame {
 		contentPane.add(btnsiguiente);
 	
 	}}
-//Debería funcionar bien ya con lo que te he comentado. Vigila que el campo de texto textField es realmente el que tienes para mensajes echando un vistazo con WindowBuilder en donde lo tienes, y que el resto de campos de texto estén bien situados al lado de sus labels.
+
 
 	
