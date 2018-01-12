@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Font;
 
 public class Ventana2 extends JFrame {
 
@@ -44,7 +45,8 @@ public class Ventana2 extends JFrame {
 	 * Configurar ventana
 	 */
 	public Ventana2() {
-		setTitle("Ventana2");
+		setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 14));
+		setTitle("JUEGO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -53,9 +55,10 @@ public class Ventana2 extends JFrame {
 		contentPane.setLayout(null);
 		
 		textArea = new JTextArea();
+		textArea.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 10));
 		textArea.setBackground(SystemColor.menu);
 		textArea.setEditable(false);
-		textArea.setBounds(10, 22, 400, 45);
+		textArea.setBounds(10, 22, 414, 40);
 		contentPane.add(textArea);
 	}
 
